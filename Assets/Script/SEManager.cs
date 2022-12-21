@@ -10,7 +10,7 @@ public class SEManager : MonoBehaviour
     private AudioClip[] audioClips;
 
     AudioSource SEaudioSource;
-   // Šâ“c
+   // Šâ“caaa
 
     private void Start()
     {
