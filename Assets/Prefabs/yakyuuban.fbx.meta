@@ -2,13 +2,22 @@ fileFormatVersion: 2
 guid: 0ef55af142ccecb4388359248c5e7e29
 ModelImporter:
   serializedVersion: 21100
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 3292011774476078358
+    second: "\u76E4|KeyAction"
+  - first:
+      74: 2460156835004259944
+    second: "\u76E4|\u76E4Action"
+  - first:
+      74: 3651924681891879570
+    second: "\u76E4|\u76E4Action.001"
   externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
