@@ -9,7 +9,7 @@ public class BgmManager : MonoBehaviour
     [SerializeField]
     AudioClip[] audioClip;
     private int test;
-
+    // ‚ª‚ñ‚¾[‚çQã!
 
     private void Start()
     {
