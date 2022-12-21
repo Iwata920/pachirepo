@@ -11,6 +11,9 @@ public class BallGenerate : MonoBehaviour
     //private PachiController pachiController;
     private PachiJoycon pachiJoycon;
     private SEManager seManager;
+    /// <summary>
+    /// 進藤三条
+    /// </summary>
 
     
     [SerializeField] private Text _BallCountText;    //玉の数用テキスト
