@@ -5,7 +5,6 @@ using UnityEngine;
 public class bat : MonoBehaviour
 {
     private bool isTimer = true;
-    // aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     Animator animator;
 
     void Start()

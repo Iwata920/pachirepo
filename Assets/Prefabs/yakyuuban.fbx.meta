@@ -7,11 +7,20 @@ ModelImporter:
       74: 3292011774476078358
     second: "\u76E4|KeyAction"
   - first:
+      74: -4935544293873789302
+    second: "\u76E4|KeyAction.001"
+  - first:
+      74: -4573301746188781265
+    second: "\u76E4|KeyAction.002"
+  - first:
+      74: -325282176205423775
+    second: "\u76E4|KeyAction.003"
+  - first:
+      74: 6034833015100818019
+    second: "\u76E4|KeyAction.004"
+  - first:
       74: 2460156835004259944
     second: "\u76E4|\u76E4Action"
-  - first:
-      74: 3651924681891879570
-    second: "\u76E4|\u76E4Action.001"
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -82,7 +91,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
