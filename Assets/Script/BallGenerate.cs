@@ -11,9 +11,6 @@ public class BallGenerate : MonoBehaviour
     //private PachiController pachiController;
     private PachiJoycon pachiJoycon;
     private SEManager seManager;
-    /// <summary>
-    /// 進藤三条
-    /// </summary>
 
     
     [SerializeField] private Text _BallCountText;    //玉の数用テキスト
@@ -52,7 +49,7 @@ public class BallGenerate : MonoBehaviour
         while (!_stop)
         {
             //現在の玉の数にテキストを更新
-            if (_BallMaxCount > 0 && pachiJoycon.GetSetPower > 0.1)
+            if (_BallMaxCount > 0 && /*pachiJoycon.GetSetPower > 0.1 ||*/ Input.GetKeyDown(KeyCode.Space))
             {
                 await Task.Delay(200);
                 //玉を生成し
@@ -88,7 +85,7 @@ public class BallGenerate : MonoBehaviour
         ball.transform.SetPositionAndRotation(transform.position, transform.rotation);
         //玉に重力と初速を与える
         ball.GetComponent<Rigidbody>().useGravity = true;
-        ball.GetComponent<Rigidbody>().AddForce(pushPower * _power * ramdomPower * Vector3.up, ForceMode.Impulse);
+        ball.GetComponent<Rigidbody>().AddForce(1 * _power * ramdomPower * Vector3.up, ForceMode.Impulse);
         //Debug.Log("打ち出す力" + pushPower * _power * ramdomPower);
         //玉の打ち出し音を流す
         seManager.SEplay(1);
