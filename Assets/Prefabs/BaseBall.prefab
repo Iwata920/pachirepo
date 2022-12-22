@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6118419182872184972}
   - component: {fileID: 6118419182872185011}
   - component: {fileID: 7811489772644578275}
+  - component: {fileID: -3446444497796872434}
   m_Layer: 0
   m_Name: BaseBall
   m_TagString: Ball
@@ -112,7 +113,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &7811489772644578275
 MonoBehaviour:
@@ -121,10 +122,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6118419182872185010}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a009d267c71c9d44fbdad2b0a690fddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plane: {fileID: 0}
   speed: 30
+--- !u!114 &-3446444497796872434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6118419182872185010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4466ace1f5ff9524ca0da58a828f5d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: -1

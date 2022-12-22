@@ -15,6 +15,7 @@ TagManager:
   - FadeOut
   - SE
   - startchucker
+  - start
   layers:
   - Default
   - TransparentFX
