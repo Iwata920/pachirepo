@@ -8,11 +8,8 @@ public class RandomCreate : MonoBehaviour
     [Tooltip("生成するGameObject")]
     private GameObject createPrefab;
     [SerializeField]
-    [Tooltip("生成する範囲A")]
+    [Tooltip("生成する場所")]
     private Transform rangeA;
-    [SerializeField]
-    [Tooltip("生成する範囲B")]
-    private Transform rangeB;
 
     bool One;
 
@@ -26,16 +23,7 @@ public class RandomCreate : MonoBehaviour
     {
         if (One)
         {
-            // rangeAとrangeBのx座標の範囲内でランダムな数値を作成
-            float x = Random.Range(rangeA.position.x, rangeB.position.x);
-            // rangeAとrangeBのy座標の範囲内でランダムな数値を作成
-            float y = Random.Range(rangeA.position.y, rangeB.position.y);
-            // rangeAとrangeBのz座標の範囲内でランダムな数値を作成
-            float z = Random.Range(rangeA.position.z, rangeB.position.z);
-
-            // GameObjectを上記で決まったランダムな場所に生成
-            Instantiate(createPrefab, new Vector3(x, y, z), createPrefab.transform.rotation);
-
+            Instantiate(createPrefab, new Vector3(rangeA.position.x, rangeA.position.y, rangeA.position.z), Quaternion.identity);
             One = false;
         }
     }

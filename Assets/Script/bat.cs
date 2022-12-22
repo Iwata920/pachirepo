@@ -16,8 +16,8 @@ public class bat : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.B)) {
             animator.SetTrigger("bat");
-            isTimer = false;
-            StartCoroutine("Timer");
+            //isTimer = false;
+            //StartCoroutine("Timer");
         }
     }
 
@@ -31,9 +31,9 @@ public class bat : MonoBehaviour
     //    }
     //}
 
-    IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(1.0f);
-        isTimer = true;
-    }
+    //IEnumerator Timer()
+    //{
+    //    yield return new WaitForSeconds(1.0f);
+    //    isTimer = true;
+    //}
 }

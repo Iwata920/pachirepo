@@ -6,25 +6,17 @@ public class accel : MonoBehaviour
 {
     [SerializeField]
     private float xSpeed = 5f;
-    [SerializeField]
-    private float ySpeed = 5f;
-    [SerializeField]
-    private float zSpeed = 5f;
 
     private bool isAccel = true;
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "yakyuu" && isAccel == true)
+        if (other.gameObject.tag == "start" && isAccel == true)
         {
-            transform.GetComponent<Rigidbody>().velocity = new Vector3(xSpeed, ySpeed, zSpeed);
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            Vector3 accel = new Vector3(xSpeed, 0.0f, 0.0f);
+            rb.AddForce(accel * 1, ForceMode.Impulse);
             isAccel = false;
-            StartCoroutine("Time");
         }
-    }
-    IEnumerator Time()
-    {
-        yield return new WaitForSeconds(20.0f);
-        isAccel = true;
     }
 }
