@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Atarime : MonoBehaviour
+public class Delete : MonoBehaviour
 {
     private GameObject Obj;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ball")
+        if (other.tag == "Ball")
         {
             Obj = other.gameObject;
             Obj.SetActive(false);
-            Debug.Log("V");
         }
     }
 }

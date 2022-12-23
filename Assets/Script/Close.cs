@@ -16,10 +16,13 @@ public class Close : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
+        GameObject child = transform.Find("hantei").gameObject;
+
         if (other.gameObject.tag == "Ball" && isClose == true)
         {
             animator.SetTrigger("close");
             isClose = false;
+            child.SetActive(false);
         }
     }
 }

@@ -5,23 +5,45 @@ using UnityEngine;
 public class BreakingBall : MonoBehaviour
 {
     [SerializeField]
-    private GameObject Slider;
+    [Header("マイナス方向")]
+    private float sliderMin;
     [SerializeField]
-    private GameObject Curve;
+    private float sliderMax;
+    [Space]
+    [SerializeField]
+    [Header("プラス方向")]
+    private float curveMin;
+    [SerializeField]
+    private float curveMax;
 
     private float zSpeed;
 
+    void Start()
+    {
+        int change = Random.Range(1, 4);
+
+        switch(change)
+        {
+            case 1:
+                zSpeed = 0;
+                break;
+
+            case 2:
+                zSpeed = Random.Range(sliderMin, sliderMax);
+                break;
+
+            case 3:
+                zSpeed = Random.Range(curveMin, curveMax);
+                break;
+
+            default:
+                break;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Slider.GetComponent<SliderBool>().isSlider)
-        {
-            zSpeed = Random.Range(3.0f, 4.0f);
-        }
-        else if (Curve.GetComponent<CurveBool>().isCurve)
-        {
-            zSpeed = Random.Range(-2.7f, -3.2f);
-        }
+        
     }
 
     void OnTriggerEnter(Collider other)
@@ -30,6 +52,7 @@ public class BreakingBall : MonoBehaviour
         {
             Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
             Vector3 sliderDirection = new Vector3(0, 0, zSpeed);
+            Debug.Log(zSpeed);
             rb.AddForce(sliderDirection * 1);
             this.GetComponent<BoxCollider>().enabled = false;
         }
