@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Delete : MonoBehaviour
+public class rotateBool : MonoBehaviour
 {
+    public bool isRotate = false;
     private GameObject Obj;
-    public bool ishazure = false;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Ball")
         {
-            ishazure = true;
+            isRotate = true;
+            StartCoroutine("Timer");
             Obj = other.gameObject;
             Obj.SetActive(false);
-            StartCoroutine("Timer");
         }
     }
 
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(2.3f);
-        ishazure = false;
+        yield return new WaitForSeconds(1.0f);
+        isRotate = false;
     }
 }
