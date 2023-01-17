@@ -5,6 +5,7 @@ using UnityEngine;
 public class Atarime : MonoBehaviour
 {
     private GameObject Obj;
+    public bool Atari;
 
     void OnTriggerEnter(Collider other)
     {
