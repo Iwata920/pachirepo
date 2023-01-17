@@ -84,8 +84,10 @@ public class BallGenerate : MonoBehaviour
         //玉の位置と回転をセット
         ball.transform.SetPositionAndRotation(transform.position, transform.rotation);
         //玉に重力と初速を与える
-        ball.GetComponent<Rigidbody>().useGravity = true;
-        ball.GetComponent<Rigidbody>().AddForce(1 * _power * ramdomPower * Vector3.up, ForceMode.Impulse);
+        Rigidbody ballRig = ball.GetComponent<Rigidbody>();
+        ballRig.velocity = Vector3.zero;
+        ballRig.useGravity = true;
+        ballRig.AddForce(1 * _power * ramdomPower * Vector3.up, ForceMode.Impulse);
         //Debug.Log("打ち出す力" + pushPower * _power * ramdomPower);
         //玉の打ち出し音を流す
         seManager.SEplay(1);
