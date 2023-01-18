@@ -51,4 +51,19 @@ public class ObjectPool : MonoBehaviour
 
         return newObj;
     }
+
+    /// <summary>
+    /// プール内のオブジェクトをfalseに
+    /// </summary>
+    public void ResetObject()
+    {
+        foreach (GameObject obj in _PoolObjList)
+        {
+            if (obj.activeSelf)
+            {
+                //使用中ならオブジェクトを非アクティブにする
+                obj.SetActive(false);
+            }
+        }
+    }
 }
