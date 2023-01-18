@@ -5,34 +5,32 @@ using UnityEngine;
 public class Close : MonoBehaviour
 {
     [SerializeField]
-    private GameObject delete;
-    [SerializeField]
     private GameObject hantei;
-    private bool isClose = true;
+    private GameObject ballhantei;
     Animator animator;
-    Delete hazure;
+    Rotate open;
 
     // Start is called before the first frame update
     void Start()
     {
-        hazure = delete.GetComponent<Delete>();
+        open = hantei.GetComponent<Rotate>();
+        ballhantei = transform.GetChild(0).gameObject;
         this.animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ball" && isClose == true)
+        if (other.gameObject.tag == "Ball" && open.isEnter == true)
         {
-            animator.SetTrigger("close");
-            isClose = false;
-            hantei.SetActive(false);
+            animator.SetBool("close", true);
+            ballhantei.SetActive(false);
         }
     }
 
     void Update()
     {
-        if (hazure.ishazure == true)
+        if(open.isEnter == false)
         {
             StartCoroutine("Timer");
         }
@@ -41,8 +39,7 @@ public class Close : MonoBehaviour
     IEnumerator Timer()
     {
         yield return new WaitForSeconds(2.3f);
-        animator.SetTrigger("open");
-        isClose = true;
-        hantei.SetActive(true);
+        animator.SetBool("close", false);
+        ballhantei.SetActive(true);
     }
 }

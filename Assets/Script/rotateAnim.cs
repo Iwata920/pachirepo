@@ -5,42 +5,34 @@ using UnityEngine;
 public class rotateAnim : MonoBehaviour
 {
     [SerializeField]
-    private GameObject rotate;
-    [SerializeField]
-    private GameObject delete;
+    private GameObject hantei;
 
     public bool isAnimend = false;
 
-    rotateBool rotatebool;
-    Delete hazure;
+    Rotate rotate;
     Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        rotatebool = rotate.GetComponent<rotateBool>();
-        hazure = delete.GetComponent<Delete>();
+        rotate = hantei.GetComponent<Rotate>();
         this.animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if(rotatebool.isRotate == true)
+        if(rotate.isEnter == true)
         {
-            animator.SetBool("boll",true);
-            animator.SetBool("bool", false);
+            animator.SetBool("rotate", true);
             StartCoroutine("Timer");
+        }
+        else if(rotate.isEnter == false)
+        {
+            animator.SetBool("rotate", false);
             isAnimend = false;
         }
-
-        if(hazure.ishazure == true)
-        {
-            animator.SetBool("bool", true);
-            animator.SetBool("boll", false);
-        }
     }
-
     IEnumerator Timer()
     {
         yield return new WaitForSeconds(2.3f);

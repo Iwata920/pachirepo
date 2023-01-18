@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class rotateBool : MonoBehaviour
 {
-    public bool isRotate = false;
     private GameObject Obj;
+    private Rotate flag;
 
+    void Start()
+    {
+        flag = GetComponentInParent<Rotate>();
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Ball")
         {
-            isRotate = true;
-            StartCoroutine("Timer");
             Obj = other.gameObject;
             Obj.SetActive(false);
+            flag.isEnter = true;
         }
-    }
-
-    IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(1.0f);
-        isRotate = false;
     }
 }

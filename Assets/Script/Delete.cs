@@ -5,22 +5,20 @@ using UnityEngine;
 public class Delete : MonoBehaviour
 {
     private GameObject Obj;
-    public bool ishazure = false;
+    private Rotate flag;
+
+    void Start()
+    {
+        flag = GetComponentInParent<Rotate>();
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Ball")
         {
-            ishazure = true;
+            flag.isEnter = false;
             Obj = other.gameObject;
             Obj.SetActive(false);
-            StartCoroutine("Timer");
         }
-    }
-
-    IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(2.3f);
-        ishazure = false;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class rightAnim : MonoBehaviour
+public class jeftAnim : MonoBehaviour
 {
     [SerializeField]
     private GameObject hantei;
@@ -26,13 +26,13 @@ public class rightAnim : MonoBehaviour
         {
             animator.SetBool("stay", false);
         }
-        if(rotateanim.isAnimend == true)
+        if (rotateanim.isAnimend == true)
         {
-            animator.SetBool("right", true);
+            animator.SetBool("left", true);
         }
         if (rotate.isEnter == false)
         {
-            animator.SetBool("right", false);
+            animator.SetBool("left", false);
             animator.SetBool("stay", true);
         }
     }
