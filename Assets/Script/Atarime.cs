@@ -11,6 +11,7 @@ public class Atarime : MonoBehaviour
     {
         if (other.gameObject.tag == "Ball")
         {
+            Atari = true;
             Obj = other.gameObject;
             Obj.SetActive(false);
             Debug.Log("V");

@@ -45,7 +45,7 @@ public class PachiJoycon : MonoBehaviour
             }
         }
         
-        Debug.Log(_pushPower);
+        //Debug.Log(_pushPower);
     }
 
     public float GetSetPower

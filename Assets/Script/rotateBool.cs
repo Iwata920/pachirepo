@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class rotateBool : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject hantei;
     private GameObject Obj;
-    private Rotate flag;
+    Rotate rotate;
 
     void Start()
     {
-        flag = GetComponentInParent<Rotate>();
+        rotate = hantei.GetComponent<Rotate>();
     }
     void OnTriggerEnter(Collider other)
     {
@@ -17,7 +19,7 @@ public class rotateBool : MonoBehaviour
         {
             Obj = other.gameObject;
             Obj.SetActive(false);
-            flag.isEnter = true;
+            rotate.isEnter = true;
         }
     }
 }

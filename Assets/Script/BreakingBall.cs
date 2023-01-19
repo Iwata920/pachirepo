@@ -16,7 +16,7 @@ public class BreakingBall : MonoBehaviour
     [SerializeField]
     private float curveMax;
 
-    private float zSpeed;
+    private float xSpeed;
 
     void Start()
     {
@@ -25,15 +25,15 @@ public class BreakingBall : MonoBehaviour
         switch(change)
         {
             case 1:
-                zSpeed = 0;
+                xSpeed = 0;
                 break;
 
             case 2:
-                zSpeed = Random.Range(sliderMin, sliderMax);
+                xSpeed = Random.Range(sliderMin, sliderMax);
                 break;
 
             case 3:
-                zSpeed = Random.Range(curveMin, curveMax);
+                xSpeed = Random.Range(curveMin, curveMax);
                 break;
 
             default:
@@ -51,8 +51,8 @@ public class BreakingBall : MonoBehaviour
         if (other.gameObject.tag == "Ball")
         {
             Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
-            Vector3 sliderDirection = new Vector3(0, 0, zSpeed);
-            Debug.Log(zSpeed);
+            Vector3 sliderDirection = new Vector3(xSpeed, 0, 0);
+            Debug.Log(xSpeed);
             rb.AddForce(sliderDirection * 1);
             this.GetComponent<BoxCollider>().enabled = false;
         }
